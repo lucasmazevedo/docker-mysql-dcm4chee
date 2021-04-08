@@ -87,7 +87,7 @@ RUN { \
 VOLUME /var/lib/mysql
 
 # Config files
-COPY /sql /docker-entrypoint-initdb.d
+COPY docker-entrypoint-initdb.d docker-entrypoint-initdb.d/
 COPY config/ /etc/mysql/
 COPY docker-entrypoint.sh /usr/local/bin/
 RUN ln -s usr/local/bin/docker-entrypoint.sh /entrypoint.sh # backwards compat
