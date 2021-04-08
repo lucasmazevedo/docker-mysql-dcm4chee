@@ -87,9 +87,7 @@ RUN { \
 VOLUME /var/lib/mysql
 
 # Config files
-COPY docker-entrypoint-initdb.d docker-entrypoint-initdb.d/
 COPY config/ /etc/mysql/
-
 COPY sql/10-create-mysql.sql /docker-entrypoint-initdb.d/
 COPY sql/20-create-fk-index.sql /docker-entrypoint-initdb.d/
 
